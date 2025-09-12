@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="/src/app.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header-row">
+      <h1>To-Do List</h1>
+      <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+    </div>
+     
+     <div class="controls">
+       
+  <label>Status filter:
+    <select id="statusFilter">
+      <option value="all">All</option>
+      <option value="active">Active</option>
+      <option value="completed">Completed</option>
+    </select>
+  </label>
+  <label>Priority filter:
+  <select id="priorityFilter">
+    <option value="all">All</option>
+    <option value="low">Низкий</option>
+    <option value="medium">Средний</option>
+    <option value="high">Высокий</option>
+  </select>
+</label>
+
+
+
+
+ 
+  <label>Date filter:
+    <select id="dateFilter">
+      <option value="all">All</option>
+      <option value="today">Today</option>
+      <option value="week">This week</option>
+      <option value="overdue">Overdue</option>
+    </select>
+  </label>
+</div>
+
+
+    <div class="input-box">
+        <h2>Введите задачу</h2>
+  <input type="text" id="taskInput" placeholder="Введите задачу" />
+  <input type="datetime-local" id="taskDate" />
+  <select id="taskPriority">
+    <option value="low">Низкий</option>
+    <option value="medium" selected>Средний</option>
+    <option value="high">Высокий</option>
+  </select>
+  <button id="addTaskButton">Добавить</button>
+</div>
+<div id="errorMsg" style="color:red; font-size:0.9em; margin-top:5px;"></div>
+
+<h3>Активные задачи</h3>
+<ul id="taskList"></ul>
+
+<h3>Выполненные задачи</h3>
+<ul id="completedTaskList"></ul>
+<div id="confirmModal" class="modal">
+  <div class="modal-content">
+    <p>Вы действительно хотите удалить эту задачу?</p>
+    <button id="confirmYes">Да</button>
+    <button id="confirmNo">Нет</button>
+  </div>
+</div>
+
+
+
+
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
+

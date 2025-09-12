@@ -127,11 +127,11 @@ if (priorityFilter.value !== "all" && task.priority !== priorityFilter.value) {
             }
         } else {
             if (dateValue !== "all") {
-                show = false; // если фильтруем по дате, а у задачи даты нет
+                show = false; 
             }
         }
 
-        if (!show) return; // пропускаем задачу, если не проходит фильтр
+        if (!show) return; 
 
         // --- Создание элемента задачи ---
         const li = document.createElement("li");

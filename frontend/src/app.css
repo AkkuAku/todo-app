@@ -16,21 +16,20 @@ body {
   padding: 20px 30px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  width: 100%;          /* вместо фиксированной ширины */
-  max-width: 400px;     /* максимум для больших экранов */
-  box-sizing: border-box; /* чтобы padding учитывался внутри */
+  width: 100%;          
+  max-width: 400px;    
+  box-sizing: border-box; 
 }
-
 
 h1 {
   text-align: center;
   color: var(--text);
 }
 
-/* Карточка ввода новой задачи */
+
 .input-box {
   display: flex;
-  flex-direction: column; /* вертикально */
+  flex-direction: column; 
   gap: 12px;
   margin: 20px 0;
   padding: 14px;
@@ -39,14 +38,14 @@ h1 {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* Группа полей (текст + дата + приоритет) */
+
 .input-fields {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-/* Поля */
+
 .input-fields input[type="text"],
 .input-fields input[type="date"],
 .input-fields select {
@@ -61,7 +60,7 @@ h1 {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Фокус */
+
 .input-fields input:focus,
 .input-fields select:focus {
   outline: none;
@@ -69,7 +68,7 @@ h1 {
   box-shadow: 0 0 4px var(--primary);
 }
 
-/* Кнопка добавления */
+
 .input-box button {
   padding: 10px 20px;
   border: none;
@@ -79,7 +78,7 @@ h1 {
   font-size: 0.95em;
   cursor: pointer;
   transition: background 0.2s ease, transform 0.1s ease;
-  align-self: flex-end; /* кнопка справа внизу */
+  align-self: flex-end; 
 }
 
 .input-box button:hover {
@@ -87,7 +86,7 @@ h1 {
   transform: scale(1.05);
 }
 
-/* Тёмная тема */
+
 [data-theme="dark"] .input-box {
   background: #2c2c2c;
 }
@@ -108,26 +107,26 @@ ul {
 
 li {
   display: flex;
-  flex-direction: column; /* вертикально: текст сверху, кнопки снизу */
+  flex-direction: column; 
   align-items: flex-start;
   padding: 10px;
   border-bottom: 1px solid var(--border);
-  width: 100%; /* важно: li не вылазит за пределы ul */
-  box-sizing: border-box; /* чтобы padding учитывался внутри */
+  width: 100%; 
+  box-sizing: border-box; 
 }
 
 li span {
   flex: none;
-  word-wrap: break-word;      /* перенос длинных слов */
-  overflow-wrap: break-word;  /* безопаснее для разных браузеров */
+  word-wrap: break-word;     
+  overflow-wrap: break-word;  
   margin-bottom: 6px;
-  max-width: 100%;            /* текст не вылезает за пределы li */
+  max-width: 100%;           
 }
 
 .task-buttons {
   display: flex;
-  gap: 8px;         /* расстояние между кнопками */
-  align-self: flex-end; /* кнопки всегда справа */
+  gap: 8px;        
+  align-self: flex-end; 
 }
 
 
@@ -163,7 +162,7 @@ li button:last-of-type:hover {
 }
 
 :root {
-  /* Light theme */
+ 
   --bg: #f5f5f5;
   --card-bg: #fff;
   --text: #333;
@@ -232,10 +231,10 @@ li[data-priority="low"] { border-left: 4px solid #28a745; padding-left: 6px; }
   border-radius: 8px;
   text-align: center;
 }
-/* Контейнер с фильтрами */
+
 .controls {
   display: flex;
-  flex-wrap: wrap; /* чтобы на маленьком экране переносились */
+  flex-wrap: wrap; 
   gap: 15px;
   margin: 20px 0;
   padding: 12px;
@@ -244,7 +243,7 @@ li[data-priority="low"] { border-left: 4px solid #28a745; padding-left: 6px; }
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* Подписи */
+
 .controls label {
   font-size: 0.95em;
   flex-direction: column;
@@ -255,7 +254,7 @@ li[data-priority="low"] { border-left: 4px solid #28a745; padding-left: 6px; }
   gap: 4px;
 }
 
-/* Стили для select */
+
 .controls select {
   padding: 6px 10px;
   border: 1px solid #ccc;
@@ -272,7 +271,7 @@ li[data-priority="low"] { border-left: 4px solid #28a745; padding-left: 6px; }
   box-shadow: 0 0 4px rgba(0,0,0,0.1);
 }
 
-/* Тёмная тема */
+
 [data-theme="dark"] .controls {
   background: #2c2c2c;
 }
@@ -285,4 +284,23 @@ li[data-priority="low"] { border-left: 4px solid #28a745; padding-left: 6px; }
   background: #3a3a3a;
   border: 1px solid #555;
   color: #eee;
+}
+
+
+
+
+@media (max-width: 500px) {
+  .container {
+    padding: 15px 20px;
+    max-width: 95%;
+  }
+
+  .input-fields {
+    flex-direction: column; 
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 10px;
+  }
 }

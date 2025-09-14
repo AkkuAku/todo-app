@@ -13,6 +13,8 @@ wails dev
 
 Демонстрация (video)
 
+https://drive.google.com/file/d/1KMLIlpe-Fsb2DrtHhDyBU2fbVVq2uhj4/view?usp=sharing
+
 Примечания
 Код написан на vanilla JS.
 Для хранения используется localStorage.

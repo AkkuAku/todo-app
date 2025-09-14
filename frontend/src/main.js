@@ -151,7 +151,7 @@ info.style.color = "gray";
 if (task.date) {
     const taskDateObj = new Date(task.date);
     const day = String(taskDateObj.getDate()).padStart(2, '0');
-    const month = String(taskDateObj.getMonth() + 1).padStart(2, '0'); // Месяцы в JS с 0
+    const month = String(taskDateObj.getMonth() + 1).padStart(2, '0'); 
     const year = taskDateObj.getFullYear();
     const hours = String(taskDateObj.getHours()).padStart(2, '0');
     const minutes = String(taskDateObj.getMinutes()).padStart(2, '0');
@@ -180,8 +180,13 @@ if (task.date) {
         li.appendChild(info);
         li.appendChild(buttonContainer);
 
-        if (task.completed) completedTaskList.appendChild(li);
-        else taskList.appendChild(li);
+        if (task.completed) {
+    li.classList.add("completed"); 
+    completedTaskList.appendChild(li);
+} else {
+    taskList.appendChild(li);
+}
+
     });
 }
 
